@@ -33,3 +33,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.httpbin.rule=Host(`httpbin.localhost`)"
       - "traefik.http.routers.httpbin.entrypoints=web"
+
+  testapi:
+    build: ./node-api
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nodeapi.rule=Host(`api.localhost`)"
+      - "traefik.http.routers.nodeapi.entrypoints=web"
+      - "traefik.http.services.nodeapi.loadbalancer.server.port=3000"
