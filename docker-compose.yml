@@ -44,9 +44,6 @@ services:
       - "traefik.http.routers.nodeapi.rule=PathPrefix(`/api`)"
       - "traefik.http.routers.nodeapi.entrypoints=web"
       - "traefik.http.services.nodeapi.loadbalancer.server.port=3000"
-      - "traefik.http.middlewares.strip-api-prefix.stripPrefix.prefixes=/api"
-      - "traefik.http.routers.nodeapi.middlewares=strip-api-prefix"
-
     restart: unless-stopped
 
 networks:

@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send({ message: "API running through Traefik!" });
 });
 
-app.get("/status", (req, res) => {
+app.get("/api/status", (req, res) => {
   res.send({ status: "ok", time: new Date() });
 });
 
