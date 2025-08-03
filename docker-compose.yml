@@ -34,17 +34,17 @@ services:
       - "traefik.http.routers.httpbin.rule=Host(`httpbin.localhost`)"
       - "traefik.http.routers.httpbin.entrypoints=web"
 
-  node-api:
-    build: ./node-api
-    container_name: node-api
-    networks:
-      - traefik
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.nodeapi.rule=PathPrefix(`/api`)"
-      - "traefik.http.routers.nodeapi.entrypoints=web"
-      - "traefik.http.services.nodeapi.loadbalancer.server.port=3000"
-    restart: unless-stopped
+  # node-api:
+  #   build: ./nod
+  #   container_name: node-api
+  #   networks:
+  #     - traefik
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.nodeapi.rule=PathPrefix(`/api`)"
+  #     - "traefik.http.routers.nodeapi.entrypoints=web"
+  #     - "traefik.http.services.nodeapi.loadbalancer.server.port=3000"
+  #   restart: unless-stopped
 
 networks:
   traefik:
