@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send({ message: "Hello from your Node.js API!" });
+  res.send({ message: "API running through Traefik!" });
 });
 
 app.get("/status", (req, res) => {
